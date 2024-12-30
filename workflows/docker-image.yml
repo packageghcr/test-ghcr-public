@@ -31,9 +31,9 @@ jobs:
         context: .
         file: .github/workflows/Dockerfile
         push: true
-        tags: ghcr.io/packageghcr/test-ghcr-public:image1-latest
+        tags: ghcr.io/packageghcr/test-ghcr-public:image1
         labels: org.opencontainers.image.source=https://bitbucket.org/nikhilmane_crest/new_project/src/master/
 
     - name: Build and push Docker Image 2 (with Attestation)
       run: |
-        docker buildx build --provenance=true --tag ghcr.io/packageghcr/test-ghcr-public:image2-latest --push -f .github/workflows/Dockerfile .
+        docker buildx build --provenance=true --tag ghcr.io/packageghcr/test-ghcr-public:image2 --push -f .github/workflows/Dockerfile .
